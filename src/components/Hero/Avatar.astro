@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+import HeroImage from "./Images/HeroImg.png";
+---
+
+<Image
+    class="w-[400px] h-[400px] md:w-[200px] md:h-[200px]"
+  width="400"
+  height="400"
+  decoding="async"
+  loading="lazy"
+  src={HeroImage}
+  alt="Arnab Chatterjee"
+/>

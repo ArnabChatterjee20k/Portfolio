@@ -1,0 +1,21 @@
+---
+import Links from "../data/Links";
+const location = new URL(Astro.request.url).pathname;
+---
+
+<div class="flex gap-7">
+  {
+    Links.map(({ label, link }) => (
+      <a
+        href={link}
+        class={`first-letter:uppercase py-2 text-xl ${
+          location === link
+            ? "font-extrabold underline underline-offset-4 decoration-2 "
+            : "font-semibold"
+        }`}
+      >
+        {label}
+      </a>
+    ))
+  }
+</div>

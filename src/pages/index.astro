@@ -1,18 +1,11 @@
 ---
+import Main from "../components/Main.astro";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Hero from "../components/Hero/Hero.astro"
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <section class="bg-primary-dark text-primary-light">
-      <header class="bg-secondary-dark text-secondary-light">
-        <h1 class="text-4xl">My Tailwind CSS Test Page</h1>
-      </header>
-      <div>
-        <p class="text-xl">This is the main content of the page.</p>
-        <a href="#" class="text-link">A Link</a>
-      </div>
-    </section>
-  </main>
+<Layout>
+  <Main>
+    <Hero/>
+  </Main>
 </Layout>
