@@ -9,6 +9,13 @@ export default function Heading({
   className,
 }: React.ComponentPropsWithoutRef<"h3">) {
   return (
-    <h3 className={twMerge("font-black text-6xl md:text-5xl mb-8 md:mb-1",className)}>{children}</h3>
+    <h3
+      className={twMerge(
+        "font-black text-primary-light text-6xl md:text-5xl mb-8 md:mb-1",
+        className
+      )}
+    >
+      {children}
+    </h3>
   );
 }
