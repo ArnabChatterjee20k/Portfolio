@@ -21,8 +21,8 @@ export default {
           dark: theme("colors.gray.200"),
         },
         secondary: {
-          light: "white",
-          dark: theme("colors.gray.300"),
+          light: theme("colors.slate.800"),
+          dark: "white",
         },
         link: theme("colors.blue.600"),
       }),
