@@ -1,5 +1,8 @@
 ---
 import { Cards, CardsTitle, CardsDescription } from "../Cards";
+import Vectorgithub from "../../icons/Vectorgithub";
+import Vectorliveurl from "../../icons/Vectorliveurl";
+import Link from "../Link";
 ---
 
 <Cards>
@@ -10,5 +13,17 @@ import { Cards, CardsTitle, CardsDescription } from "../Cards";
       readable content of a page when looking at its layout. The point of using
       Lorem Ipsum is that it has a ............
     </CardsDescription>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <div class="flex gap-5 md:gap-2">
+      <Vectorgithub className="h-8 w-8 md:h-4 md:w-4 fill-black" />
+      <Vectorliveurl className="h-8 w-8 md:h-4 md:w-4 fill-black" />
+    </div>
+    <Link
+      className="flex justify-between text-xl md:text-sm text-blue-600 hover:text-blue-700 gap-1"
+      svgClassName="fill-blue-600 w-5 h-4 md:w-3 md:h-2"
+      text="Read More"
+    />
   </div>
 </Cards>
