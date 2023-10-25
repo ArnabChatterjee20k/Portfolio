@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/NavContainer.astro";
 import '@fontsource-variable/inter';
 interface Props {
@@ -21,6 +22,7 @@ const { title = "Arnab Chatterjee" } = Astro.props;
   <body class="bg-primary-light w-fit md:w-auto">
     <Navbar/>
     <slot />
+    <Footer/>
   </body>
 </html>
 
