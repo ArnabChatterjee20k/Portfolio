@@ -4,18 +4,21 @@ import Menu from "../icons/Menu";
 const location = new URL(Astro.request.url).pathname;
 ---
 
-<div>
+<div class="relative">
   <button>
     <Menu className="w-10 h-10 md:hidden" />
   </button>
-  <div class="hidden md:flex md:gap-7">
+  <div
+  id="menu"
+    class="flex flex-col absolute bg-white py-6 right-0 mt-2 md:mt-0 gap-7 shadow-md rounded-md md:rounded-none md:shadow-none md:bg-transparent md:py-0 md:flex-row md:static"
+  >
     {
       Links.map(({ label, link }) => (
         <a
           href={link}
-          class={`first-letter:uppercase py-2 text-xl ${
+          class={`first-letter:uppercase py-2 text-4xl md:text-xl pr-32 pl-10 md:px-0 ${
             location === link
-              ? "font-extrabold underline underline-offset-4 decoration-2 "
+              ? "font-extrabold border-black border-l-4 md:border-none md:underline underline-offset-4 decoration-2"
               : "font-semibold"
           }`}
         >
