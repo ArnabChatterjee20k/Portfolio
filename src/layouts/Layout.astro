@@ -1,6 +1,5 @@
 ---
-import Navbar from "../components/NavContainer";
-import LinkText from "../components/NavLinks.astro";
+import Navbar from "../components/NavContainer.astro";
 import '@fontsource-variable/inter';
 interface Props {
   title?: string;
@@ -19,10 +18,8 @@ const { title = "Arnab Chatterjee" } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-primary-light">
-    <Navbar>
-      <LinkText/>
-    </Navbar>
+  <body class="bg-primary-light w-fit md:w-auto">
+    <Navbar/>
     <slot />
   </body>
 </html>
