@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../icons/Menu";
+import Menu from "../../icons/Menu";
 
 interface Props {
   navID: string;
