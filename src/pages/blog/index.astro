@@ -1,0 +1,17 @@
+---
+import Heading from "../../components/Heading";
+import Main from "../../components/Main.astro";
+import FeaturedPosts from "../../components/Posts/FeaturedPosts.astro";
+import Layout from "../../layouts/Layout.astro";
+import SearchBar from "../../components/Posts/SearchBar";
+---
+
+<Layout>
+  <Main>
+    <section class="flex flex-col gap-8 md:gap-3 mt-4 md:-mt-5">
+      <Heading className="mb-0">Blogs</Heading>
+      <SearchBar />
+      <FeaturedPosts />
+    </section>
+  </Main>
+</Layout>
