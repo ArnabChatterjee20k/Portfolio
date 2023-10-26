@@ -8,7 +8,7 @@ export default function SubHeading({
   return (
     <h3
       className={twMerge(
-        "font-medium text-secondary-light text-4xl leading-normal",
+        "font-medium text-secondary-light dark:text-primary-dark text-4xl leading-normal",
         className
       )}
     >

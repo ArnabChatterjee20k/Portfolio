@@ -11,7 +11,7 @@ export default function Heading({
   return (
     <h3
       className={twMerge(
-        "font-black text-primary-light text-6xl md:text-5xl mb-8 md:mb-1",
+        "font-black text-primary-light dark:text-primary-dark text-6xl md:text-5xl mb-8 md:mb-1",
         className
       )}
     >

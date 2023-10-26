@@ -1,24 +1,26 @@
 ---
 import Links from "../data/Links";
-import Menu from "../icons/Menu";
 const location = new URL(Astro.request.url).pathname;
+import MenuToggler from "./MenuToggler"
+
+const NAV_ID = "menu"
+const NAV_VISIBLE_CLASS = "menu-visible"
 ---
 
 <div class="relative">
-  <button>
-    <Menu className="w-10 h-10 md:hidden" />
-  </button>
+  <!-- using client media to load the script when we are on below md breakpoint -->
+  <MenuToggler navID={NAV_ID} navVisibilityClass={NAV_VISIBLE_CLASS} client:media={"(max-width:768px)"}/>
   <div
-  id="menu"
-    class="flex flex-col absolute bg-white py-6 right-0 mt-2 md:mt-0 gap-7 shadow-md rounded-md md:rounded-none md:shadow-none md:bg-transparent md:py-0 md:flex-row md:static"
+    id="menu"
+    class={`hidden md:flex flex-col absolute bg-white dark:bg-secondary-dark dark:md:bg-transparent py-6 right-0 mt-2 md:mt-0 gap-7 shadow-md rounded-md md:rounded-none md:shadow-none md:bg-transparent md:py-0 md:flex-row md:static`}
   >
     {
       Links.map(({ label, link }) => (
         <a
           href={link}
-          class={`first-letter:uppercase py-2 text-4xl md:text-xl pr-32 pl-10 md:px-0 ${
+          class={`first-letter:uppercase dark:text-primary-dark py-2 text-4xl md:text-xl pr-32 pl-10 md:px-0 ${
             location === link
-              ? "font-extrabold border-black border-l-4 md:border-none md:underline underline-offset-4 decoration-2"
+              ? "font-extrabold border-black dark:border-white  border-l-4 md:border-none md:underline underline-offset-4 decoration-2"
               : "font-semibold"
           }`}
         >
@@ -28,3 +30,13 @@ const location = new URL(Astro.request.url).pathname;
     }
   </div>
 </div>
+
+<style>
+  .menu{
+    display: none;
+  }
+
+  .menu-visible{
+    display: flex;
+  }
+</style>

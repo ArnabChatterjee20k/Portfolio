@@ -16,7 +16,7 @@ export default function Link({
     <a
       href={href}
       className={twMerge(
-        "text-xl text-slate-700 flex items-center gap-3 cursor-pointer hover:text-black hover:font-medium",
+        "text-xl text-slate-700 dark:text-gray-200 flex items-center gap-3 cursor-pointer hover:text-black dark:hover:text-white hover:font-medium",
         className
       )}
     >

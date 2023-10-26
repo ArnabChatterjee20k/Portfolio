@@ -19,7 +19,7 @@ const { title = "Arnab Chatterjee" } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-primary-light w-fit md:w-auto">
+  <body class="bg-primary-light dark:bg-primary-dark w-fit md:w-auto">
     <Navbar/>
     <slot />
     <Footer/>
@@ -29,5 +29,6 @@ const { title = "Arnab Chatterjee" } = Astro.props;
 <style is:global>
   :root{
     font-family: "Inter Variable",sans-serif;
+    transition: 5000ms linear;
   }
 </style>
