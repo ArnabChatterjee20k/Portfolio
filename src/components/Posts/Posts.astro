@@ -1,8 +1,12 @@
 ---
 import FeaturedPosts from "./FeaturedPosts.astro";
-import PostsHeader from "./PostsHeader"
+import PostsHeader from "./PostsHeader";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
 ---
+
 <section class="flex flex-col gap-3 px-4 md:px-0 md:gap-5">
-    <PostsHeader/>
-    <FeaturedPosts/>
+  <PostsHeader />
+  <FeaturedPosts posts={posts} />
 </section>

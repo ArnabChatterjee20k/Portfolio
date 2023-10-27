@@ -1,15 +1,22 @@
 ---
 import { Cards, CardsDescription, CardsTitle } from "../Cards";
-import Vectorgithub from "../../icons/Vectorgithub";
-import Vectorliveurl from "../../icons/Vectorliveurl";
 import Link from "../Link";
+import { type CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { slug, data } = post;
 ---
 
 <Cards className="md:w-full">
-  <CardsTitle className="text-ellipsis">Design patterns for fetching api</CardsTitle>
-  <CardsDescription>Published On : 12th Aug</CardsDescription>
+  <CardsTitle className="text-ellipsis">{data.title}</CardsTitle>
+  <CardsDescription>Published On : {data.date}</CardsDescription>
   <div class="flex ml-auto">
     <Link
+      href={`/blog/${slug}`}
       className="flex justify-between text-xl md:text-sm text-blue-600 hover:text-blue-700  dark:text-blue-400 dark:hover:text-blue-700 gap-1"
       svgClassName="fill-blue-600 w-5 h-4 md:w-3 md:h-2"
       text="Read More"
