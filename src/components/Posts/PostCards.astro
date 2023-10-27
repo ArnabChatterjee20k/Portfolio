@@ -13,7 +13,7 @@ const { slug, data } = post;
 
 <Cards className="md:w-full">
   <CardsTitle className="text-ellipsis">{data.title}</CardsTitle>
-  <CardsDescription>Published On : {data.date}</CardsDescription>
+  <CardsDescription>Published On : {data.title}</CardsDescription>
   <div class="flex ml-auto">
     <Link
       href={`/blog/${slug}`}

@@ -12,10 +12,20 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+import Heading from "../../components/Heading.tsx";
+const components = {h1:Heading}
 ---
 
 <Layout>
   <Main>
-    <Content />
+    <div class="prose dark:prose-headings:text-gray-200 dark:prose-p:text-gray-300 dark:prose-a:text-blue-600 dark:prose-strong:text-gray-300">
+      <Content/>
+    </div>
   </Main>
 </Layout>
+
+<style>
+  h1,h2,h3,p{
+    font-size: 4rem !important;
+  }
+</style>
