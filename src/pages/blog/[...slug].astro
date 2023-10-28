@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Main from "../../components/Main.astro";
+import Heading from "../../components/Heading.tsx"; 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
   return blogEntries.map((entry) => ({
@@ -12,13 +13,13 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-import Heading from "../../components/Heading.tsx";
-const components = {h1:Heading}
+const {title} = entry.data
 ---
 
 <Layout>
   <Main>
-    <div class="prose dark:prose-headings:text-gray-200 dark:prose-p:text-gray-300 dark:prose-a:text-blue-600 dark:prose-strong:text-gray-300">
+    <div class="mx-auto prose w-full md:w-fit dark:prose-headings:text-gray-200 dark:prose-p:text-gray-300 dark:prose-a:text-blue-600 dark:prose-strong:text-gray-300">
+      <Heading className="md:mb-4">{title}</Heading>
       <Content/>
     </div>
   </Main>
