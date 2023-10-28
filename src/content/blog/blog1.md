@@ -1,6 +1,6 @@
 ---
 title: "Brag Journal"
-datePublished: Thu Jul 20 2023 12:35:22 GMT+0000 (Coordinated Universal Time)
+date: Thu Jul 20 2023 12:35:22 GMT+0000 (Coordinated Universal Time)
 cuid: clkb4xxjw00010alf0ts79vjv
 slug: brag-journal
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1689856420810/bbaeffbd-a683-4d92-9594-beef3e4ae96d.png
