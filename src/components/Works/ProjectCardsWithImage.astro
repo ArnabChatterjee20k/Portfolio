@@ -7,6 +7,7 @@ import { Image } from "astro:assets";
 import { type CollectionEntry } from "astro:content";
 import Tags from "./Tags";
 import ImageCover from "./ImageCover.astro";
+import LinkList from "./LinkList.astro";
 
 interface Props {
   work: CollectionEntry<"work">;
@@ -34,19 +35,7 @@ const newDescription =
   <Tags tags={tags} />
 
   <div class="flex items-center justify-between">
-    <div class="flex gap-5 md:gap-2">
-      {
-        githublink && (
-          <Vectorgithub className="h-8 w-8 md:h-4 md:w-4 fill-black dark:fill-white" />
-        )
-      }
-      {
-        liveurl && (
-          <Vectorliveurl className="h-8 w-8 md:h-4 md:w-4 fill-black dark:fill-white" />
-        )
-      }
-    </div>
-
+    <LinkList githublink={githublink} liveurl={liveurl} />
     <Link
       href={`/work/${slug}`}
       className="flex justify-between text-xl md:text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-700 gap-1"

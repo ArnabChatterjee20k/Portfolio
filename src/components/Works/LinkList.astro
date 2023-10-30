@@ -1,0 +1,25 @@
+---
+import Vectorgithub from '../../icons/Vectorgithub';
+import Vectorliveurl from '../../icons/Vectorliveurl';
+interface Props{
+    githublink?:string,
+    liveurl?:string
+}
+const {githublink,liveurl} = Astro.props
+---
+<div class="flex gap-5 md:gap-2">
+    {
+      githublink && (
+        <a href={githublink}>
+          <Vectorgithub className="h-8 w-8 md:h-4 md:w-4 fill-black dark:fill-white" />
+        </a>
+      )
+    }
+    {
+      liveurl && (
+        <a href={liveurl}>
+          <Vectorliveurl className="h-8 w-8 md:h-4 md:w-4 fill-black dark:fill-white" />
+        </a>
+      )
+    }
+  </div>

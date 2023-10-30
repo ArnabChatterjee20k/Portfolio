@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Main from "../../components/Main.astro";
+import ProjectHeader from "../../components/Works/ProjectHeader.astro";
+
+export async function getStaticPaths() {
+  const workEntries = await getCollection("work");
+  return workEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout>
+  <Main>
+    <ProjectHeader work={entry} />
+    <div
+      class="mx-auto prose w-full md:w-fit dark:prose-headings:text-gray-200 dark:prose-p:text-gray-300 dark:prose-a:text-blue-600 dark:prose-strong:text-gray-300 dark:prose-li:text-gray-200 dark:prose-ul:text-gray-200 dark:prose-ol:text-gray-200 text-[1.5rem] max-w-[800px]"
+    >
+      <Content />
+    </div>
+  </Main>
+</Layout>
+
+<style>
+  h1,
+  h2,
+  h3,
+  p {
+    font-size: 4rem !important;
+  }
+</style>
