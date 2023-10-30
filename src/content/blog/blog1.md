@@ -9,7 +9,7 @@ tags: journal, wemakedevs, wemakedev
 ---
 # A brief intro
 
-![](/assets/snippet2.png)
+![](/src/assets/snippet2.png)
 
 Hey hi, readers! I am Arnab Chatterjee. I am an eighteen-year-old kid and recently I passed my 1st year of my college. One week ago my second year of college started.
 
