@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import { imageMetadata } from "astro/assets/utils";
+interface Props {
+  image?: ImageMetadata;
+  title: string;
+}
+const { image, title } = Astro.props;
+---
+
+{
+  image && (
+    <Image
+      src={image}
+      width="400"
+      height="200"
+      alt={title}
+      class="object-cover rounded-lg w-full h-[400px] md:w-[400px] md:h-[200px]"
+    />
+  )
+}
+{
+  !image && (
+    <div class="w-full rounded-lg h-[400px] md:h-[200px] bg-gray-200 dark:bg-slate-700" />
+  )
+}

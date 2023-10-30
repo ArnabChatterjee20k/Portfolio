@@ -1,0 +1,15 @@
+---
+import { type CollectionEntry } from "astro:content";
+import ProjectCardsWithImage from "./ProjectCardsWithImage.astro";
+
+interface Props {
+  works: CollectionEntry<"work">[];
+}
+
+const { works } = Astro.props;
+---
+
+<div class="grid sm:grid-cols-2 md:grid-cols-2 gap-10 px-1">
+  {works.map((work) => <ProjectCardsWithImage work={work} />)}
+</div>
+
