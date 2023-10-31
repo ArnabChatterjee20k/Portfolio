@@ -1,0 +1,30 @@
+---
+import Heading from "../components/Heading";
+import Main from "../components/Main.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <Main>
+    <section class="py-4 px-14 md:p-0 flex flex-col gap-5 mb-[90%]">
+      <Heading className="relative">
+        Contact Me <span class="absolute -top-[5px] ml-4 md:ml-0">👋</span>
+      </Heading>
+      <p class="text-3xl md:text-xl leading-snug dark:text-gray-200">
+        I'm all about keeping my digital life organized, and that means
+        maintaining a pristine inbox! For the quickest way to get in touch, drop
+        me a message at <a
+          class="font-bold underline"
+          href="mailto:arnabchatterjee.ac.2@gmail.com"
+          >arnabchatterjee.ac.2@gmail.com</a
+        > ❤️
+      </p>
+      <p class="text-3xl md:text-xl leading-snug dark:text-gray-200">
+        You can also connect with me via <a class="font-bold underline" href=""
+          >LinkedIn</a
+        > or <a class="font-bold underline" href="">Twitter</a> direct messages.
+        Let's chat!
+      </p>
+    </section>
+  </Main>
+</Layout>
