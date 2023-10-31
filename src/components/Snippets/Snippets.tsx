@@ -1,12 +1,7 @@
 import React, { useState, lazy, Suspense } from "react";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SnippetContextProvider from "./context/SnippetContextProvider";
+const SnippetCode = lazy(() => import("./SnippetCode"));
 const SnippetList = lazy(() => import("./SnippetList"));
 export default function Snippets() {
   return (
@@ -16,7 +11,7 @@ export default function Snippets() {
           <section className="w-full">
             <Routes>
               <Route path="/snippet/" element={<SnippetList />} />
-              {/* <Route path="/snippet/:id" Component={() => <Param />} /> */}
+              <Route path="/snippet/:id" element={<SnippetCode />} />
             </Routes>
           </section>
         </BrowserRouter>

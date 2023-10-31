@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import DummyCodeSnippet from "../../data/DummyCodeSnippet";
 import { Cards, CardsTitle, CardsDescription } from "../Cards";
-export default function SnippetList() {
+
+export default function SnippetList() {  
   return (
     <div className="flex flex-col gap-3">
       {DummyCodeSnippet.map(({ title, id, description }) => (
