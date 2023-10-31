@@ -1,0 +1,20 @@
+---
+import Main from "../../components/Main.astro";
+import Layout from "../../layouts/Layout.astro";
+import Snippets from "../../components/Snippets/Snippets";
+
+export function getStaticPaths() {
+  // we need to define all the possible react routes so astro knows to redirect here
+  return [
+    { params: { route: undefined } },
+    { params: { route: "hello" } },
+    { params: { route: "/" } },
+  ];
+}
+---
+
+<Layout>
+  <Main>
+    <Snippets client:only />
+  </Main>
+</Layout>
