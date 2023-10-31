@@ -1,0 +1,11 @@
+---
+import Main from "../../components/Main.astro";
+import Layout from "../../layouts/Layout.astro";
+import Snippets from "../../components/Snippets/Snippets";
+---
+
+<Layout>
+  <Main>
+    <Snippets client:only />
+  </Main>
+</Layout>
