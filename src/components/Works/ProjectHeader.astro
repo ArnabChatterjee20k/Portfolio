@@ -1,0 +1,35 @@
+---
+import { imageMetadata } from "astro/assets/utils";
+import { Image } from "astro:assets";
+import { type CollectionEntry } from "astro:content";
+import Heading from "../Heading";
+import SubHeading from "../SubHeading";
+import Tags from "./Tags";
+import LinkList from "./LinkList.astro";
+interface Props {
+  work: CollectionEntry<"work">;
+}
+
+const { work } = Astro.props;
+const { slug, data } = work;
+
+const { title, description, tags, liveurl, githublink, image } = data;
+---
+
+<div class="flex flex-col max-w-[800px] mx-auto gap-7">
+  <div class="flex flex-col gap-2">
+    <Heading className="mb-0">{title}</Heading>
+    <SubHeading className="text-xl">{description}</SubHeading>
+    <Tags tags={tags} />
+  </div>
+
+  <Image
+    src={image as ImageMetadata}
+    width="400"
+    height="400"
+    alt={title}
+    decoding="async"
+    loading="lazy"
+    class="w-full h-60 object-cover rounded-lg"
+  />
+</div>

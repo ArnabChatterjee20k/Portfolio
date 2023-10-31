@@ -1,0 +1,20 @@
+---
+import Main from "../../components/Main.astro";
+import Layout from "../../layouts/Layout.astro";
+import Heading from "../../components/Heading";
+import FeaturedWorksWithImage from "../../components/Works/FeaturedWorksWithImage.astro";
+import { getCollection } from "astro:content";
+
+const works = await getCollection("work");
+---
+
+<Layout>
+  <Main>
+    <section class="flex flex-col">
+      <div class="flex flex-col gap-5 px-4">
+        <Heading>Projects</Heading>
+        <FeaturedWorksWithImage works={works} />
+      </div>
+    </section>
+  </Main>
+</Layout>
