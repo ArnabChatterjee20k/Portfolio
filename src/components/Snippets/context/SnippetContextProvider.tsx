@@ -10,7 +10,7 @@ import type CodeSnippetInterface from "../types/CodeSnippetInterface";
 const SnippetContext = createContext<CodeSnippetInterface | {}>({});
 
 // Create a custom hook for using the context
-const useSnippetContext = (): CodeSnippetInterface | {} =>
+export const useSnippetContext = (): CodeSnippetInterface | {} =>
   useContext(SnippetContext);
 
 interface SnippetContextProviderProps {
@@ -21,7 +21,11 @@ export function SnippetContextProvider({
   children,
 }: SnippetContextProviderProps) {
   // You can manage the state and logic here
-  const [snippet, setSnippet] = useState<CodeSnippetInterface | {}>({});
+  const [snippet, setSnippet] = useState<CodeSnippetInterface | {}>({
+    1: { code: "function(){}", language: "js" },
+    2: { code: "const", language: "js" },
+    3: { code: "const", language: "js" },
+  });
 
   return (
     <SnippetContext.Provider value={{ snippet, setSnippet }}>
