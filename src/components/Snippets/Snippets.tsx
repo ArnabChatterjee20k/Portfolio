@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import {
   BrowserRouter,
   Route,
@@ -6,37 +6,25 @@ import {
   Link,
   useParams,
 } from "react-router-dom";
+import SnippetContextProvider from "./context/SnippetContextProvider";
+const SnippetList = lazy(() => import("./SnippetList"));
 export default function Snippets() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/snippet/:id" Component={() => <Param />} />
-        <Route path="/snippet/" Component={() => <Dynamic />} />
-      </Routes>
-    </BrowserRouter>
+    <Suspense fallback={<Fallback />}>
+      <SnippetContextProvider>
+        <BrowserRouter>
+          <section className="w-full">
+            <Routes>
+              <Route path="/snippet/" element={<SnippetList />} />
+              {/* <Route path="/snippet/:id" Component={() => <Param />} /> */}
+            </Routes>
+          </section>
+        </BrowserRouter>
+      </SnippetContextProvider>
+    </Suspense>
   );
 }
 
-function Param() {
-  const { id } = useParams();
-  return (
-    <div>
-      <h1>{id}</h1>
-      <Dynamic/>
-    </div>
-  );
-}
-
-function Dynamic() {
-  const [text, setText] = useState("");
-  return (
-    <div>
-      <input
-        type="number"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      <Link to={"/snippet/" + text}>Go to {text}</Link>
-    </div>
-  );
+function Fallback() {
+  return <h1>Loading Snippets....</h1>;
 }

@@ -30,9 +30,10 @@ export const CardsTitle = ({
 
 export const CardsDescription = ({
   children,
+  className
 }: React.ComponentPropsWithoutRef<"p">) => {
   return (
-    <p className="text-secondary-light dark:text-primary-dark text-3xl leading-snug md:text-sm">
+    <p className={twMerge("text-secondary-light dark:text-primary-dark text-3xl leading-snug md:text-sm",className)}>
       {children}
     </p>
   );
