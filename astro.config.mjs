@@ -8,7 +8,4 @@ import expressiveCode from "astro-expressive-code";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), expressiveCode(), mdx()],
-  redirects: {
-    "/snippet/[id]": "/snippet/",
-  },
 });
