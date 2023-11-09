@@ -23,7 +23,7 @@ const { title, description, tags, liveurl, githublink, image } = data;
     <Tags tags={tags} />
   </div>
 
-  <Image
+  {image && <Image
     src={image as ImageMetadata}
     width="400"
     height="400"
@@ -31,5 +31,5 @@ const { title, description, tags, liveurl, githublink, image } = data;
     decoding="async"
     loading="lazy"
     class="w-full h-60 object-cover rounded-lg"
-  />
+  />}
 </div>

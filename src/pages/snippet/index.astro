@@ -1,0 +1,11 @@
+---
+import Main from "../../components/Main.astro";
+import Layout from "../../layouts/Layout.astro";
+import SnippetsApp from "../../components/Snippets/SnippetsApp";
+---
+
+<Layout>
+  <Main>
+    <SnippetsApp client:only />
+  </Main>
+</Layout>
