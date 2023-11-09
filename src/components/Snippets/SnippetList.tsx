@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
-import DummyCodeSnippet from "../../data/DummyCodeSnippet";
 import { Cards, CardsTitle, CardsDescription } from "../Cards";
+import { useSnippetContext } from "./context/SnippetContextProvider";
 
-export default function SnippetList() {  
+export default function SnippetList() {
+  const { snippets, status } = useSnippetContext();
+  console.log({snippets});
+  
   return (
     <div className="flex flex-col gap-3">
-      {DummyCodeSnippet.map(({ title, id, description }) => (
+      {status === "loading" ? <LoadingState /> : null}
+      {status === "error" ? <ErrorState /> : null}
+      {snippets?.map(({ title, id, description }) => (
         <Cards className="md:w-full">
           <Link to={`/snippet/${id}`}>
             <CardsTitle className="text-ellipsis">{title}</CardsTitle>
@@ -24,3 +29,6 @@ export default function SnippetList() {
     </div>
   );
 }
+
+const LoadingState = () => <p>Loading Snippets...</p>;
+const ErrorState = () => <p>Some Error Occured...</p>;
