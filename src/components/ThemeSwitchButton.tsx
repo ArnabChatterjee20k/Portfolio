@@ -1,21 +1,32 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Moon from "../icons/Moon";
 import Sun from "../icons/Sun";
 
 export default function ThemeSwitchButton() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
-  function changeTheme() {
-    const themeState = document.documentElement.classList;
-    if (themeState.contains("dark")) {
-      themeState.add("light");
-      setTheme("light");
-      themeState.remove("dark");
-      return;
+
+  useEffect(() => {
+    // Load the initial theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme as "light" | "dark");
+      document.documentElement.classList.add(savedTheme);
     }
-    themeState.remove("light");
-    setTheme("dark")
-    themeState.add("dark");
+  }, []);
+
+  function changeTheme() {
+    const isDarkMode = theme === "dark";
+
+    const newTheme = isDarkMode ? "light" : "dark";
+
+    setTheme(newTheme);
+    document.documentElement.classList.toggle("dark", !isDarkMode);
+    document.documentElement.classList.toggle("light", isDarkMode);
+
+    // Update the theme in localStorage
+    localStorage.setItem('theme', newTheme);
   }
+
   return (
     <button
       onClick={changeTheme}
