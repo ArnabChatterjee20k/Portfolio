@@ -5,17 +5,16 @@ import FeaturedPosts from "../../components/Posts/FeaturedPosts.astro";
 import Layout from "../../layouts/Layout.astro";
 import SearchBar from "../../components/Posts/SearchBar";
 import { getCollection } from "astro:content";
-
+import AllPosts from "../../components/Posts/AllPosts";
+import Posts from "../../components/Posts/"
 const posts = await getCollection("blog");
-
 ---
 
 <Layout>
   <Main>
     <section class="flex flex-col gap-8 md:gap-3 mt-4 md:-mt-5">
       <Heading className="mb-0">Blogs</Heading>
-      <SearchBar />
-      <FeaturedPosts posts={posts} />
+      <Posts posts={posts} client:load/>
     </section>
   </Main>
 </Layout>
