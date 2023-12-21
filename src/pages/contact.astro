@@ -1,7 +1,9 @@
 ---
 import Heading from "../components/Heading";
 import Main from "../components/Main.astro";
+import SocialLinks from "../data/SocialLinks";
 import Layout from "../layouts/Layout.astro";
+const {email,github,linkedin,twitter} = SocialLinks
 ---
 
 <Layout>
@@ -15,14 +17,14 @@ import Layout from "../layouts/Layout.astro";
         maintaining a pristine inbox! For the quickest way to get in touch, drop
         me a message at <a
           class="font-bold underline"
-          href="mailto:arnabchatterjee.ac.2@gmail.com"
-          >arnabchatterjee.ac.2@gmail.com</a
+          href={`mailto:${email}`}
+          >{email}</a
         > ❤️
       </p>
       <p class="text-3xl md:text-xl leading-snug dark:text-gray-200">
-        You can also connect with me via <a class="font-bold underline" href=""
+        You can also connect with me via <a class="font-bold underline" href={`${linkedin}`}
           >LinkedIn</a
-        > or <a class="font-bold underline" href="">Twitter</a> direct messages.
+        > or <a class="font-bold underline" href={`${twitter}`}>Twitter</a> direct messages.
         Let's chat!
       </p>
     </section>

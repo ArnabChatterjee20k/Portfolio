@@ -1,7 +1,7 @@
 export default [
   { label: "home", link: "/" },
-  { label: "work", link: "/work" },
-  { label: "blog", link: "/blog" },
-  { label: "snippet", link: "/snippet" },
+  { label: "works", link: "/works" },
+  { label: "blogs", link: "/blogs" },
+  { label: "snippets", link: "/snippets" },
   { label: "contact me", link: "/contact" },
 ];

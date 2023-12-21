@@ -1,6 +1,8 @@
 ---
 import Heading from "../Heading";
 import SubHeading from "../SubHeading";
+import LinkedIn from "../../icons/LinkedIn.tsx";
+import SocialLinks from "../../data/SocialLinks";
 ---
 
 <section class="flex flex-col items-center md:items-start">
@@ -8,7 +10,14 @@ import SubHeading from "../SubHeading";
   <SubHeading className="text-center md:text-xl">
     Want to know about my Work Experiences? Expertise? Achievements?
   </SubHeading>
-  <SubHeading className="text-center flex flex-col items-center md:text-xl md:flex-row  md:items-start md:gap-2">
-    This is the best place to visit <b>LinkedIn</b>
+  <SubHeading
+    className="text-center flex flex-col items-center md:text-xl md:flex-row  md:items-start md:gap-2"
+  >
+    This is the best place to visit <a
+      href={SocialLinks.linkedin}
+      target="_blank"
+      class="flex items-center font-bold hover:text-blue-600 hover:fill-blue-600"
+      ><LinkedIn className="h-5 w-5" />LinkedIn</a
+    >
   </SubHeading>
 </section>

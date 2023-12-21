@@ -16,7 +16,7 @@ export default function PostCards ({ post }:Props){
       <CardsDescription>Published On: {data.date.toDateString()}</CardsDescription>
       <div className="flex ml-auto">
         <Link
-          href={`/blog/${slug}`}
+          href={`/blogs/${slug}`}
           className="flex justify-between text-xl md:text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-700 gap-1"
           svgClassName="fill-blue-600 w-5 h-4 md:w-3 md:h-2"
           text="Read More"

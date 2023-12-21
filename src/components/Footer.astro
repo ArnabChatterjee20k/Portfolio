@@ -3,13 +3,21 @@ import GitHub from "../icons/GitHub";
 import Twitter from "../icons/Twitter";
 import LinkedIn from "../icons/LinkedIn";
 import SubHeading from "./SubHeading";
+import SocialLinks from "../data/SocialLinks";
+const {github,linkedin,twitter} = SocialLinks
 ---
 
 <footer class="flex flex-col gap-2 items-center py-6">
     <div class="flex gap-2">
-        <GitHub className="w-16 h-16 md:h-6 md:w-6 dark:fill-white"/>
-        <LinkedIn className="w-16 h-16 md:h-6 md:w-6 dark:fill-white"/>
-        <Twitter className="w-16 h-16 md:h-6 md:w-6 dark:fill-white"/>
+        <a href={github}>
+            <GitHub className="w-16 h-16 md:h-6 md:w-6 dark:fill-white"/>
+        </a>
+        <a href={linkedin}>
+            <LinkedIn className="w-16 h-16 md:h-6 md:w-6 dark:fill-white"/>
+        </a>
+        <a href={twitter}>
+            <Twitter className="w-16 h-16 md:h-6 md:w-6 dark:fill-white"/>
+        </a>
     </div>
     <SubHeading className="text-4xl text-black font-medium md:text-base">This is made by Arnab Chatterjee</SubHeading>
 </footer>

@@ -5,7 +5,7 @@ export default function WorksHeader() {
   return (
     <div className="flex justify-between items-center md:items-center">
       <Heading className="text-5xl">Featured Works</Heading>
-      <Link className="text-2xl md:text-base" text="SEE ALL" />
+      <Link className="text-2xl md:text-base" text="SEE ALL" href="works"/>
     </div>
   );
 }
