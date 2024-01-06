@@ -30,5 +30,5 @@ export default function SnippetList() {
   );
 }
 
-const LoadingState = () => <p>Loading Snippets...</p>;
-const ErrorState = () => <p>Some Error Occured...</p>;
+const LoadingState = () => <p className="dark:text-white">Loading Snippets...</p>;
+const ErrorState = () => <p className="dark:text-white">Some Error Occured...</p>;
