@@ -13,19 +13,19 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       # - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogPost.astro"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publishing Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
-  
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publishing Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "work"
     label: "Projects"
     folder: "src/content/work"
     create: true
     slug: "{{slug}}"
-    fields: 
-    - {label:"Title",name:"title",widget:"string"}
-    - {label:"Github",name:"githublink",widget:"string",required:false}
-    - {label:"Image",name:"image",widget:"string",required:false}
-    - {label:"LiveURL",name:"liveurl",widget:"string",required:false}
-    - {label:"Description",name:"description",widget:"markdown",required:false}
-    - {label:"Tags",name:"tags",widget:"list"}
+    fields:
+      - { label:"Title", name:"title", widget:"string" }
+      - { label:"Github", name:"githublink", widget:"string" }
+      - { label:"Image", name:"image", widget:"string" }
+      - { label:"LiveURL", name:"liveurl", widget:"string" }
+      - { label:"Description", name:"description", widget:"markdown" }
+      - { label:"Tags", name:"tags", widget:"list" }
