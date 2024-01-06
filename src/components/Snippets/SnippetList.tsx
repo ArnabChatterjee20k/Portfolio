@@ -12,13 +12,13 @@ export default function SnippetList() {
       {status === "error" ? <ErrorState /> : null}
       {snippets?.map(({ title, id, description }) => (
         <Cards className="md:w-full">
-          <Link to={`/snippet/${id}`}>
+          <Link to={`/snippets/${id}`}>
             <CardsTitle className="text-ellipsis">{title}</CardsTitle>
           </Link>
           {description && <CardsDescription>{description}</CardsDescription>}
           <div className="flex ml-auto">
             <Link
-              to={`/snippet/${id}`}
+              to={`/snippets/${id}`}
               className="flex justify-between text-xl md:text-sm text-blue-600 hover:text-blue-700  dark:text-blue-400 dark:hover:text-blue-700 gap-1"
             >
               Read More

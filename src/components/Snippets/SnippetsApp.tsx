@@ -10,8 +10,8 @@ export default function Snippets() {
         <BrowserRouter>
           <section className="w-full">
             <Routes>
-              <Route path="/snippet/" element={<SnippetList />} />
-              <Route path="/snippet/:id" element={<SnippetCode />} />
+              <Route path="/snippets/" element={<SnippetList />} />
+              <Route path="/snippets/:id" element={<SnippetCode />} />
             </Routes>
           </section>
         </BrowserRouter>
