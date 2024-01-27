@@ -9,8 +9,6 @@ tags: journal, wemakedevs, wemakedev
 ---
 # A brief intro
 
-![](/uploads/snippet1.png)
-
 Hey hi, readers! I am Arnab Chatterjee. I am an eighteen-year-old kid and recently I passed my 1st year of my college. One week ago my second year of college started.
 
 I am a full-stack web developer having proficiency in python full stack and MERN. I am also having hands-on experience with AWS , docker and react native. I also love to build automation scripts using google app script and github actions. I love to write articles and blogs about the topic which are bit confusing. I am also interested in ui and ux.
