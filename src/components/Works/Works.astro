@@ -6,5 +6,5 @@ const works = await getCollection("work")
 ---
 <section class="flex flex-col gap-3 px-4 md:px-0 md:gap-5">
     <WorksHeader/>
-    <WorkCards works={works}/>
+    <WorkCards works={works.toReversed()}/>
 </section>
