@@ -6,6 +6,7 @@ import FeaturedWorksWithImage from "../../components/Works/FeaturedWorksWithImag
 import { getCollection } from "astro:content";
 
 const works = await getCollection("work");
+works.reverse()
 ---
 
 <Layout>
@@ -13,7 +14,7 @@ const works = await getCollection("work");
     <section class="flex flex-col">
       <div class="flex flex-col gap-5 px-4">
         <Heading>Projects</Heading>
-        <FeaturedWorksWithImage works={works.toReversed()} />
+        <FeaturedWorksWithImage works={works} />
       </div>
     </section>
   </Main>
